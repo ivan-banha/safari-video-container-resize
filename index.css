@@ -1,0 +1,25 @@
+.banner {
+    padding: 0;
+    background-color: #52575c;
+    color: white;
+}
+
+.banner-text {
+    padding: 8px 20px;
+    margin: 0;
+}
+
+.player {
+    width: 480px;
+    height: 320px;
+    padding: 8px;
+
+    border: 1px solid red;
+    background-color: palevioletred;
+
+    video {
+        max-width: 100%;
+        max-height: 100%;
+        border: 2px solid blue;
+    }
+}
