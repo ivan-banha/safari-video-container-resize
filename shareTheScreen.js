@@ -34,8 +34,20 @@ $("#resize-video-container").click(() => {
   }
 });
 
+$("#replace-url").click(function () {
+  const browserUrl = new URL(window.location.toString());
+
+  if (browserUrl.searchParams.has("test-param")) {
+      browserUrl.searchParams.delete("test-param");
+  } else {
+      browserUrl.searchParams.append("test-param", Date.now().toString());
+  }
+
+  window.history.replaceState(null, "", browserUrl);
+})
+
 async function join() {
-  const captureStream = await navigator.mediaDevices.getDisplayMedia({
+  const captureStream = await navigator.mediaDevices.getUserMedia({
     video: true,
     audio: false,
   });
